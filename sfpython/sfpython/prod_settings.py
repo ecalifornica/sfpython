@@ -7,3 +7,5 @@ STATIC_URL = '/resources/'
 
 DEBUG = False
 ALLOWED_HOSTS = ['.bayareapython.com']
+
+SECRET_KEY = os.getenv('BAYAREAPYTHON_SECRET'),

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="page-header no-border">
+    <ol class="breadcrumb">
+      <li>Job Postings</li>
+    </ol>
+  </div>
+</div>  
+
+{% for job in jobs %}
+<div class="row">
+<div class="col-md-8">
+  <h2 class=""><a href="{{ job.get_absolute_url }}">{{ job.title|safe }}</a></h2>
+  <h3>{{ job.company }} ~ {{ job.location }}</h3>
+  <div class="lead">
+    <p>{{ job.details|safe }}</p>
+  </div>
+  <p><a class="btn btn-lg btn-success" href="{{ job.get_absolute_url }}" role="button">Learn More</a>
+    {% if job.link %}<a class="btn btn-lg btn-primary" href="{{ job.link }}" role="button">Apply</a>{% endif %}</p>
+</div>
+<div class="col-md-4">
+  {% ifchanged job.logo %}
+  {% if job.logo %}<img class="img-responsive" align="right" src="{{ MEDIA_URL }}{{job.logo.url }}" alt="{{job.title}}" width="200">{% endif %}
+  {% endifchanged %}
+</div>
+</div>  
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load tinycontent_tags %}
+{% block content %}
+<style type="text/css">
+#id_details { height:40px;}
+.controls {
+</style>
+<div class="row">
+<h2>Submit your Job Posting</h2>  
+
+<div class="well">
+{% tinycontent_simple 'create-job' %}
+</div>
+{% crispy form %}
+</div>
+{% endblock %}

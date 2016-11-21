@@ -1,0 +1,4 @@
+{% load tinycontent_tags %}
+{% with "help-"|add:field.name as content_name %}
+<p id="hint_{{ field.auto_id }}" class="help-block">{% tinycontent content_name %}{{ field.help_text|safe }}{% endtinycontent %}</p>
+{% endwith %}

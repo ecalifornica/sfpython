@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+<div class="page-header no-border">
+  <ol class="breadcrumb">
+   <li>FAQ</li>
+  </ol>
+</div>  
+
+{% for object in objects %}
+<h2><a href="{{ object.get_absolute_url }}">{{ object.question|safe }}</a></h2>
+<div class="well well-lg">
+    <div class="lead">
+      {{ object.answer|safe }}
+    </div>
+  </div>
+<hr>
+{% endfor %}
+</div>
+{% endblock %}

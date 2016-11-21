@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+<div class="page-header no-border">
+  <ol class="breadcrumb">
+   <li><a href="..">FAQ</a></li>
+   <li>{{ object.question|safe }}</li>
+  </ol>
+</div>  
+<div class="well well-lg">
+    <div class="lead">
+      {{ object.answer|safe }}
+    </div>
+  </div>
+</div>  
+{% endblock %}

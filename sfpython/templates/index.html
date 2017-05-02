@@ -36,7 +36,8 @@
         <span class="sr-only">Next</span>
       </a>
     </div><!-- /.carousel -->
-
+    {% block content1 %}
+    {% endblock %}
     {% get_jobs as jobs %}
     <!-- Three columns of text below the carousel -->
     {% for row in jobs|chunks:3 %}
@@ -54,5 +55,5 @@
       </div><!-- /.row -->
      {% endfor %}
 
-          
+
 {% endblock %}

@@ -59,6 +59,9 @@
       body {margin-top:105px;}
     </style>
     {% endblock %}
+
+	<link rel='stylesheet' href="{% static 'unitegallery/css/unite-gallery.css'%}" type='text/css' />
+	<link rel='stylesheet' href="{% static 'unitegallery/themes/default/ug-theme-default.css' %}" type='text/css' />
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -116,9 +119,17 @@
       </footer>
 
     </div><!-- /.container -->
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type='text/javascript' src="{% static 'unitegallery/js/unitegallery.min.js' %}"></script>
+	<script type='text/javascript' src="{% static 'unitegallery/themes/default/ug-theme-default.js' %}"></script>
+    <script type='text/javascript' src="{% static 'unitegallery/themes/tiles/ug-theme-tiles.js' %}"></script>
+
+    <script>
+      $(document).ready(function(){
+				$("#gallery").unitegallery({gallery_theme:"tiles"});
+
+			});
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{% static "js/ie10-viewport-bug-workaround.js" %}"></script>
